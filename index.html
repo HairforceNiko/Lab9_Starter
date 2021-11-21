@@ -110,17 +110,19 @@
     }
 
     try {
-      if(isNaN(firstNum)) {
+      if (isNaN(firstNum)) {
         throw "Input Error";
-      } else if (isNaN(secondNum)) {
+      }
+      if (isNaN(secondNum)) {
         throw new InputError("Input Error");
-      } else {
-        output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
       }
     } catch(err) {
       console.log(err.message);
     } finally {
       console.log('Do it again.');
+      if(!isNaN(firstNum) && !isNaN(secondNum)) {
+        output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+      }
     } 
 
     errorBtns[0].addEventListener('click', () => {
