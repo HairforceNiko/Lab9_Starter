@@ -188,9 +188,9 @@
       throw new Error("Trigger a Global Error");
     })
 
-    let errorMSG = "Sadly an error has occurred";
-    window.onerror = function (msg, url, lineNo, columnNo, error) {
-      console.log(errorMSG);
+    if (window.onerror)
+    {
+      TrackJS.track(window.onerror)
     }
   </script>
 </body>
