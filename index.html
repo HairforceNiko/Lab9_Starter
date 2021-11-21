@@ -112,15 +112,15 @@
     try {
       if(isNaN(firstNum)) {
         throw "Input Error";
-      }
-      if(isNaN(secondNum)) {
+      } else if (isNaN(secondNum)) {
         throw new InputError("Input Error");
+      } else {
+        output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
       }
     } catch(err) {
       console.log(err.message);
     } finally {
-      console.log('Input Correct.');
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+      console.log('Do it again.');
     } 
 
     errorBtns[0].addEventListener('click', () => {
