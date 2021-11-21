@@ -102,6 +102,16 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    try {
+      if(isNaN(`${firstNum}`) || isNaN(`${secondNum}`)) {
+        Console.log("Input not a number.");
+      }
+    } catch(err) {
+      console.error("Something Wrong.");
+    } finally {
+      console.log('Input Correct.');
+    } 
+
     errorBtns[0].addEventListener('click', () => {
       console.log("Console Log Button");
     });
@@ -156,16 +166,6 @@
     errorBtns[14].addEventListener('click', () => {
       throw new Error("Trigger a Global Error");
     })
-
-    try {
-      if(document.getElementsByClassName("MyButton")[0]) {
-        Console.log("Good job.");
-      }
-    } catch(err) {
-      console.error("MyButton not founded.");
-    } finally {
-      console.log('This is finally');
-    } 
   </script>
 </body>
 
