@@ -156,6 +156,16 @@
     errorBtns[14].addEventListener('click', () => {
       throw new Error("Trigger a Global Error");
     })
+
+    try {
+      if(document.getElementsByClassName("MyButton")[0]) {
+        Console.log("Good job.");
+      }
+    } catch(err) {
+      console.error("MyButton not founded.");
+    } finally {
+      console.log('This is finally');
+    } 
   </script>
 </body>
 
