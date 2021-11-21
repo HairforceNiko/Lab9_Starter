@@ -110,7 +110,10 @@
     }
 
     try {
-      if(isNaN(`${firstNum}`) || isNaN(`${secondNum}`)) {
+      if(isNaN(`${firstNum}`)) {
+        throw "Input Error";
+      }
+      if(isNaN(`${secondNum}`)) {
         throw new InputError("Input Error");
       }
     } catch(err) {
