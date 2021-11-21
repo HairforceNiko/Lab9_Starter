@@ -149,9 +149,9 @@
         function second() {
           console.trace();
         }
-        first();
+        second();
       }
-      second();
+      first();
     });
     errorBtns[14].addEventListener('click', () => {
       throw new Error("Trigger a Global Error");
