@@ -102,20 +102,19 @@
     // Start your code here
     // You may move this JS to another file if you wish
 
-    class ReadError extends Error {
-      constructor(message, cause) {
+    class InputError extends Error {
+      constructor(message) {
         super(message);
-        this.cause = cause;
-        this.name = 'ReadError';
+        this.name = "NotNumberError";
       }
     }
 
     try {
       if(isNaN(`${firstNum}`) || isNaN(`${secondNum}`)) {
-        console.error('Not a number');
+        throw new InputError("Input Error");
       }
     } catch(err) {
-      throw new ReadError("Input Error", err);
+      console.error(err.message);
     } finally {
       console.log('Input Correct.');
       output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
