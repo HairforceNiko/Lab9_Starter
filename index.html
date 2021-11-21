@@ -135,7 +135,7 @@
       console.groupEnd();
     });
     errorBtns[10].addEventListener('click', () =>{
-      const people = [["Fangqi", "Yuan" ], ["Enze", "Ma"], ["Yunhao", "Du"]];
+      const people = [{First:"Fangqi", Last:"Yuan" }, {First:"Enze", Last:"Ma"}, {First:"Yunhao", Last:"Du"}];
       console.table(people);
     });
     errorBtns[11].addEventListener('click', () => {
@@ -144,7 +144,15 @@
     errorBtns[12].addEventListener('click', () => {
       console.timeEnd('timer');
     });
-    
+    errorBtns[13].addEventListener('click', () => {
+      function first() {
+        function second() {
+          console.trace();
+        }
+        first();
+      }
+      second();
+    });
   </script>
 </body>
 
