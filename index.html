@@ -87,7 +87,15 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "287e60fcd13d46bcb4684d3e4f5663be"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+  <script>
+    TrackJS.track('Testing TrackJS!');
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -179,6 +187,11 @@
     errorBtns[14].addEventListener('click', () => {
       throw new Error("Trigger a Global Error");
     })
+
+    let errorMSG = "Sadly an error has occurred";
+    window.onerror = function (msg, url, lineNo, columnNo, error) {
+      console.log(errorMSG);
+    }
   </script>
 </body>
 
