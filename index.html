@@ -93,22 +93,8 @@
       token: "287e60fcd13d46bcb4684d3e4f5663be"
       // for more configuration options, see https://docs.trackjs.com
     });
-  </script>
-  <script>
+
     TrackJS.track('Testing TrackJS!');
-    let form = document.querySelector('form');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      let output = document.querySelector('output');
-      let firstNum = document.querySelector('#first-num').value;
-      let secondNum = document.querySelector('#second-num').value;
-      let operator = document.querySelector('#operator').value;
-    });
-
-    let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-
-    // Start your code here
-    // You may move this JS to another file if you wish
 
     class InputError extends Error {
       constructor(message) {
@@ -117,22 +103,32 @@
       }
     }
 
-    try {
-      if (isNaN(firstNum)) {
-        throw "Input Error";
-      }
-      if (isNaN(secondNum)) {
-        throw new InputError("Input Error");
-      }
-    } catch(err) {
-      console.log(err.message);
-    } finally {
-      console.log('Do it again.');
-      if(!isNaN(firstNum) && !isNaN(secondNum)) {
+    let form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let output = document.querySelector('output');
+      let firstNum = document.querySelector('#first-num').value;
+      let secondNum = document.querySelector('#second-num').value;
+      let operator = document.querySelector('#operator').value;
+      try {
+        if (isNaN(firstNum)) {
+          throw "Input Error";
+        }
+        if (isNaN(secondNum)) {
+          throw new InputError("Input Error");
+        }
         output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
-      }
-    } 
+      } catch(err) {
+        console.error(err.message);
+      } finally {
+        console.log('Do it again.');
+      } 
+    });
 
+    let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
+
+    // Start your code here
+    // You may move this JS to another file if you wish
     errorBtns[0].addEventListener('click', () => {
       console.log("Console Log Button");
     });
