@@ -117,7 +117,7 @@
         throw new InputError("Input Error");
       }
     } catch(err) {
-      console.error(err.message);
+      console.log(err.message);
     } finally {
       console.log('Input Correct.');
       output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
