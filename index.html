@@ -153,6 +153,9 @@
       }
       second();
     });
+    errorBtns[14].addEventListener('click', () => {
+      throw new Error("Trigger a Global Error");
+    })
   </script>
 </body>
 
