@@ -112,10 +112,10 @@
       let operator = document.querySelector('#operator').value;
       try {
         if (isNaN(firstNum)) {
-          throw "Input Error";
+          throw "First number input Error";
         }
         if (isNaN(secondNum)) {
-          throw new InputError("Input Error");
+          throw new InputError("Second number input Custom Error");
         }
         output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
       } catch(err) {
