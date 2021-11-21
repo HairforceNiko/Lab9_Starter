@@ -103,25 +103,25 @@
     // Start your code here
     // You may move this JS to another file if you wish
     errorBtns[0].addEventListener('click', () => {
-      console.log("Lab 9 log message");
+      console.log("Console Log Button");
     });
 
     errorBtns[1].addEventListener('click', () => {
-      console.error("Lab 9 error message");
+      console.error("Console Error Button");
     });
 
     errorBtns[2].addEventListener('click', () => {
-      console.count("Lab 9 count message")
+      console.count("Console Count Button")
     })
 
     errorBtns[3].addEventListener('click', () => {
-      console.warn("Lab 9 warning message");
+      console.warn("Console Warn Button");
     });
 
     errorBtns[4].addEventListener('click', () => {
-      const a = 3;
-      const errorMsg = "3 is not even";
-      console.assert(a % 2 == 0, {a:a, errorMsg: errorMsg});
+      const num = 2;
+      const errorMsg = "2 is equal to 3";
+      console.assert(num == 3, {num:num, errorMsg: errorMsg});
     });
 
     errorBtns[5].addEventListener('click', () => {
@@ -129,7 +129,7 @@
     });
 
     errorBtns[6].addEventListener('click', () => {
-      console.dir(document.head);
+      console.dir(document.location);
     });
 
     errorBtns[7].addEventListener('click', () =>{
@@ -137,7 +137,7 @@
     })
 
     errorBtns[8].addEventListener('click', () =>{
-      console.group("Lab 9 groupStart message");
+      console.group("Console Group Start Button");
     });
 
     errorBtns[9].addEventListener('click', () => {
@@ -145,7 +145,7 @@
     });
 
     errorBtns[10].addEventListener('click', () =>{
-      const people = [["Edwin", "Lau" ], ["Thomas", "Powell"], ["Miles", "Jones"]];
+      const people = [["Fangqi", "Yuan" ], ["Enze", "Ma"], ["Yunhao", "Du"]];
       console.table(people);
     });
 
